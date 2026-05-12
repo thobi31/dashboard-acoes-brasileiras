@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Análise de Ações 2026</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #111827;
+      color: #f3f4f6;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 32px 24px;
+    }
+    header {
+      margin-bottom: 32px;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #f9fafb;
+    }
+    header p {
+      margin-top: 6px;
+      font-size: 0.875rem;
+      color: #9ca3af;
+    }
+    .acoes {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .badge-petr { background: #1f3a5f; color: #60a5fa; }
+    .badge-itau { background: #4a2c0a; color: #fb923c; }
+    .badge-vale { background: #14401f; color: #4ade80; }
+    .grafico-section {
+      background: #1f2937;
+      border-radius: 12px;
+      padding: 24px 20px;
+      margin-bottom: 28px;
+    }
+    .grafico-section h2 {
+      font-size: 1.1rem;
+      color: #e5e7eb;
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Análise de Ações — 2026</h1>
+    <p>Dados atualizados em: <strong>{{ data }}</strong></p>
+    <div class="acoes">
+      <span class="badge badge-petr">PETR4 — Petrobras</span>
+      <span class="badge badge-itau">ITUB4 — Itaú</span>
+      <span class="badge badge-vale">VALE3 — Vale</span>
+    </div>
+  </header>
+
+  <div class="grafico-section">
+    <h2>Cotação (R$)</h2>
+    {{ grafico_cotacao | safe }}
+  </div>
+
+  <div class="grafico-section">
+    <h2>Performance Acumulada (%)</h2>
+    {{ grafico_performance | safe }}
+  </div>
+</body>
+</html>
