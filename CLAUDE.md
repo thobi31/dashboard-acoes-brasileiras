@@ -27,3 +27,9 @@ Aplicação Flask de arquivo único (`app.py`) com fluxo de dados em pipeline:
 Os gráficos são gerados server-side e injetados no template com o filtro `| safe`. O Plotly.js é carregado via CDN apenas no primeiro gráfico (`include_plotlyjs="cdn"`); o segundo usa `include_plotlyjs=False` para evitar duplicação.
 
 Para adicionar uma nova ação, inclua o ticker em `TICKERS` e a cor hex em `CORES` em `app.py`.
+
+## Repositório GitHub
+
+O projeto está hospedado em `https://github.com/thobi31/dashboard-acoes-brasileiras`.
+
+A sincronização com o GitHub é **automática**: ao final de cada resposta do Claude Code, o hook de Stop em `.claude/settings.json` executa `git add -A`, faz commit com a mensagem `auto: atualização via Claude Code` e empurra para o repositório — mas somente se houver alterações. Nenhuma ação manual é necessária.
